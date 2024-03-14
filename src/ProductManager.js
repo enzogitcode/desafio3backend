@@ -1,5 +1,4 @@
-const fs = require("fs");
-
+import {promises as fs} from 'fs';
 const fileProducts = './fileproducts.json'
 class ProductManager {
     static ultId = 0
@@ -33,12 +32,12 @@ class ProductManager {
         this.products.push(newProduct)
 
         const writeFile = async () => {
-            fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2))
+            fs.writeFile(this.path, JSON.stringify(this.products, null, 2))
         }
         writeFile();
     }
 
-    getProduct() {
+    getProducts() {
         return JSON.parse(fs.readFileSync(this.path, "utf-8"));
 
     }
@@ -47,7 +46,7 @@ class ProductManager {
         if (this.products.find((product) => product.id == id)) {
             const foundedProduct = this.products.find((product) => product.id == id)
             const writeFile = async () => {
-                fs.writeFileSync(this.path, JSON.stringify(foundedProduct, null, 2))
+                fs.writeFile(this.path, JSON.stringify(foundedProduct, null, 2))
             }
             writeFile();
         }
@@ -60,7 +59,7 @@ class ProductManager {
         if (foundedProduct) {
             const updateFile = async () => {
     
-                fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2))
+                fs.writeFile(this.path, JSON.stringify(this.products, null, 2))
             }
             updateFile();
         }
@@ -93,7 +92,7 @@ class ProductManager {
 
             this.products = db // db ahora sera nuestro array asi que modificamos "this.products" de nuevo
 
-            fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2))//sobreescribimos el archivo con el nuevo array
+            fs.writeFile(this.path, JSON.stringify(this.products, null, 2))//sobreescribimos el archivo con el nuevo array
 
         }
 
@@ -107,7 +106,7 @@ class ProductManager {
         else {
            const otherProducts= this.products.filter((product) => product.id !==id) 
             const writeFile = async () => {
-                fs.writeFileSync(this.path, JSON.stringify(otherProducts, null, 2))
+                fs.writeFile(this.path, JSON.stringify(otherProducts, null, 2))
             }
             writeFile();
         }
