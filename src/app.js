@@ -22,6 +22,27 @@ app.get("/products", async (req, res) => {
         console.log("error", error)
     }
 })
+
+app.get("/products/:pid", async (req, res) => {
+
+    const id = req.params.pid;
+
+    try {
+
+        const product = await productManager.getProductbyId(parseInt(id));
+        if (!product) {
+            return res.json({
+                error: "Producto no encontrado"
+            });
+        }
+
+        res.json(producto);
+    } catch (error) {
+        console.error("Error", error);
+        
+    }
+})
+
 app.listen(PUERTO, async (req, res) => {
     console.log(`esta aplicación funciona en el puerto ${PUERTO}`)
 })

@@ -37,7 +37,7 @@ class ProductManager {
         writeFile();
     }
 
-    getProduct() {
+    getProducts() {
         return JSON.parse(fs.readFile(this.path, "utf-8"));
 
     }
@@ -114,33 +114,5 @@ class ProductManager {
 
 //Testing
 const manager = new ProductManager()
-
-manager.addProduct('Cable Vga', 'Cable Vga 20 Metros Blindado Macho Doble Filtro Cobre 100', 23759, 'sin imagen', 'abc123', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc124', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc125', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc126', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc127', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc128', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc129', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc130', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc131', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc132', 25)
-manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc133', 25)
-
-manager.updateProduct(3,{
-
-    title: 'ACTUALIZACION',
-
-    description: 'ACTUALIZACION',
-
-    price: 200,
-
-    thumbnail: 'sin imagen',
-
-    code: 'ACTUALIZACION125',
-
-    stock: 24
-
-})
 
 export default ProductManager;

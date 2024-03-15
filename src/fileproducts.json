@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "title": "producto prueba",
-    "description": "Este es un producto prueba",
-    "price": 200,
+    "title": "Cable Vga",
+    "description": "Cable Vga 20 Metros Blindado Macho Doble Filtro Cobre 100",
+    "price": 23759,
     "thumbnail": "sin imagen",
     "code": "abc123",
     "stock": 25
   },
   {
     "id": 2,
-    "title": "producto prueba",
+    "title": "Cable usb",
     "description": "Este es un producto prueba",
     "price": 200,
     "thumbnail": "sin imagen",
@@ -25,5 +25,68 @@
     "code": "ACTUALIZACION125",
     "stock": 24,
     "id": 3
+  },
+  {
+    "id": 4,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc126",
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc127",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc128",
+    "stock": 25
+  },
+  {
+    "id": 7,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc129",
+    "stock": 25
+  },
+  {
+    "id": 8,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc130",
+    "stock": 25
+  },
+  {
+    "id": 9,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc131",
+    "stock": 25
+  },
+  {
+    "id": 10,
+    "title": "Cable usb",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "sin imagen",
+    "code": "abc132",
+    "stock": 25
   }
 ]
