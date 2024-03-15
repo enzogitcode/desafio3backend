@@ -38,7 +38,7 @@ class ProductManager {
     }
 
     getProducts() {
-        return JSON.parse(fs.readFileSync(this.path, "utf-8"));
+        return JSON.parse(fs.readFile(this.path, "utf-8"));
 
     }
     getProductbyId(id) {
@@ -68,11 +68,11 @@ class ProductManager {
             console.log("No existe un producto con ese ID,")
         }
     }
-    async updateProduct(id,obj) { // atrapa el id del producto a modificar y el obj del producto modificado
+    async updateProduct(id,obj) { 
 
         const db = await this.getProduct()
 
-        const index = db.findIndex(product => product.id == id) // buscamos si existe el producto en el array
+        const index = db.findIndex(product => product.id == id) 
 
         console.log({index})
 
@@ -84,15 +84,14 @@ class ProductManager {
 
         else {
 
-            //aqui tienes que aplicar la logica para modificar el producto tal cual
 
-            obj.id=id; // le agregamos el id
+            obj.id=id; 
 
-            db[index] = obj // reemplazamos el obj en el array
+            db[index] = obj
 
-            this.products = db // db ahora sera nuestro array asi que modificamos "this.products" de nuevo
+            this.products = db 
 
-            fs.writeFile(this.path, JSON.stringify(this.products, null, 2))//sobreescribimos el archivo con el nuevo array
+            fs.writeFile(this.path, JSON.stringify(this.products, null, 2))
 
         }
 
