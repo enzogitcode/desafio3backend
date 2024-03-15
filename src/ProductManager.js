@@ -37,6 +37,7 @@ class ProductManager {
         writeFile();
     }
 
+    
     async getProducts() {
         const resp= await JSON.parse(fs.readFile(this.path, "utf-8"));
         const array = JSON.parse(resp);
