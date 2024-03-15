@@ -1,9 +1,9 @@
 import { promises as fs } from 'fs';
-const fileProducts = './fileproducts.json'
-class ProductManager {
-    constructor() {
 
-        this.path = fileProducts;
+class ProductManager {
+    constructor(path) {
+
+        this.path = path;
         this.products = []
 
     }
@@ -37,9 +37,10 @@ class ProductManager {
         writeFile();
     }
 
-    getProducts() {
-        return JSON.parse(fs.readFile(this.path, "utf-8"));
-
+    async getProducts() {
+        const resp= await JSON.parse(fs.readFile(this.path, "utf-8"));
+        const array = JSON.parse(resp);
+        return array;
     }
     getProductbyId(id) {
 
@@ -70,7 +71,7 @@ class ProductManager {
     }
     async updateProduct(id,obj) { 
 
-        const db = await this.getProduct()
+        const db = await this.getProducts()
 
         const index = db.findIndex(product => product.id == id) 
 
@@ -112,7 +113,5 @@ class ProductManager {
     }
 }
 
-//Testing
-const manager = new ProductManager()
 
 export default ProductManager;

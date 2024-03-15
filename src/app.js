@@ -36,7 +36,7 @@ app.get("/products/:pid", async (req, res) => {
             });
         }
 
-        res.json(producto);
+        res.json(product);
     } catch (error) {
         console.error("Error", error);
         
