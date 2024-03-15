@@ -1,13 +1,13 @@
-import {promises as fs} from 'fs';
+import { promises as fs } from 'fs';
 const fileProducts = './fileproducts.json'
 class ProductManager {
-    static ultId = 0
     constructor() {
 
         this.path = fileProducts;
         this.products = []
 
     }
+    static id = 0
 
     //Métodos 
 
@@ -21,7 +21,7 @@ class ProductManager {
             return;
         }
         const newProduct = {
-            id: ++ProductManager.ultId,
+            id: ++ProductManager.id,
             title,
             description,
             price,
@@ -37,7 +37,7 @@ class ProductManager {
         writeFile();
     }
 
-    getProducts() {
+    getProduct() {
         return JSON.parse(fs.readFile(this.path, "utf-8"));
 
     }
@@ -70,7 +70,7 @@ class ProductManager {
     }
     async updateProduct(id,obj) { 
 
-        const db = await this.getProducts()
+        const db = await this.getProduct()
 
         const index = db.findIndex(product => product.id == id) 
 
@@ -87,7 +87,7 @@ class ProductManager {
 
             obj.id=id; 
 
-            db[index] = obj
+            db[index] = obj 
 
             this.products = db 
 
@@ -126,5 +126,21 @@ manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen',
 manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc131', 25)
 manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc132', 25)
 manager.addProduct('Cable usb', 'Este es un producto prueba', 200, 'sin imagen', 'abc133', 25)
+
+manager.updateProduct(3,{
+
+    title: 'ACTUALIZACION',
+
+    description: 'ACTUALIZACION',
+
+    price: 200,
+
+    thumbnail: 'sin imagen',
+
+    code: 'ACTUALIZACION125',
+
+    stock: 24
+
+})
 
 export default ProductManager;
