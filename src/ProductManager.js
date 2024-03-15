@@ -70,7 +70,7 @@ class ProductManager {
     }
     async updateProduct(id,obj) { 
 
-        const db = await this.getProduct()
+        const db = await this.getProducts()
 
         const index = db.findIndex(product => product.id == id) 
 
